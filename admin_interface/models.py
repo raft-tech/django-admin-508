@@ -82,8 +82,8 @@ class Theme(models.Model):
         verbose_name=_('title'))
     title_color = ColorField(
         blank=True,
-        default='#F5DD5D',
-        help_text='#F5DD5D',
+        default='#FFFFFF',
+        help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('color'))
     title_visible = models.BooleanField(
@@ -147,14 +147,14 @@ class Theme(models.Model):
 
     css_header_background_color = ColorField(
         blank=True,
-        default='#0C4B33',
-        help_text='#0C4B33',
+        default='#112E51',
+        help_text='#112E51',
         max_length=10,
         verbose_name=_('background color'))
     css_header_text_color = ColorField(
         blank=True,
-        default='#44B78B',
-        help_text='#44B78B',
+        default='#FFFFFF',
+        help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('text color'))
     css_header_link_color = ColorField(
@@ -165,15 +165,15 @@ class Theme(models.Model):
         verbose_name=_('link color'))
     css_header_link_hover_color = ColorField(
         blank=True,
-        default='#C9F0DD',
-        help_text='#C9F0DD',
+        default='#E1F3F8',
+        help_text='#E1F3F8',
         max_length=10,
         verbose_name=_('link hover color'))
 
     css_module_background_color = ColorField(
         blank=True,
-        default='#44B78B',
-        help_text='#44B78B',
+        default='#205493',
+        help_text='#205493',
         max_length=10,
         verbose_name=_('background color'))
     css_module_background_selected_color = ColorField(
@@ -202,8 +202,8 @@ class Theme(models.Model):
         verbose_name=_('link selected color'))
     css_module_link_hover_color = ColorField(
         blank=True,
-        default='#C9F0DD',
-        help_text='#C9F0DD',
+        default='#E1F3F8',
+        help_text='#E1F3F8',
         max_length=10,
         verbose_name=_('link hover color'))
     css_module_rounded_corners = models.BooleanField(
@@ -212,27 +212,27 @@ class Theme(models.Model):
 
     css_generic_link_color = ColorField(
         blank=True,
-        default='#0C3C26',
-        help_text='#0C3C26',
+        default='#205493',
+        help_text='#205493',
         max_length=10,
         verbose_name=_('link color'))
     css_generic_link_hover_color = ColorField(
         blank=True,
-        default='#156641',
-        help_text='#156641',
+        default='#0071BC',
+        help_text='#0071BC',
         max_length=10,
         verbose_name=_('link hover color'))
 
     css_save_button_background_color = ColorField(
         blank=True,
-        default='#0C4B33',
-        help_text='#0C4B33',
+        default='#205493',
+        help_text='#205493',
         max_length=10,
         verbose_name=_('background color'))
     css_save_button_background_hover_color = ColorField(
         blank=True,
-        default='#0C3C26',
-        help_text='#0C3C26',
+        default='#112E51',
+        help_text='#112E51',
         max_length=10,
         verbose_name=_('background hover color'))
     css_save_button_text_color = ColorField(
@@ -244,14 +244,14 @@ class Theme(models.Model):
 
     css_delete_button_background_color = ColorField(
         blank=True,
-        default='#BA2121',
-        help_text='#BA2121',
+        default='#CD2026',
+        help_text='#CD2026',
         max_length=10,
         verbose_name=_('background color'))
     css_delete_button_background_hover_color = ColorField(
         blank=True,
-        default='#A41515',
-        help_text='#A41515',
+        default='#981B1E',
+        help_text='#981B1E',
         max_length=10,
         verbose_name=_('background hover color'))
     css_delete_button_text_color = ColorField(
@@ -288,8 +288,8 @@ class Theme(models.Model):
     related_modal_background_opacity = models.CharField(
         max_length=5,
         choices=related_modal_background_opacity_choices,
-        default='0.3',
-        help_text='20%',
+        default='0.8',
+        help_text='80%',
         verbose_name=_('background opacity'))
     related_modal_rounded_corners = models.BooleanField(
         default=True,

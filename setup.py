@@ -7,8 +7,8 @@ import os, sys
 
 exec(open('admin_interface/version.py').read())
 
-github_url = 'https://github.com/fabiocaccamo'
-package_name = 'django-admin-interface'
+github_url = 'https://github.com/raft-tech'
+package_name = 'django-admin-508'
 package_url = '{}/{}'.format(github_url, package_name)
 package_path = os.path.abspath(os.path.dirname(__file__))
 long_description_file_path = os.path.join(package_path, 'README.md')
@@ -26,11 +26,11 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     include_package_data=True,
     version=__version__,
-    description='django-admin-interface is a modern responsive flat admin interface customizable by the admin itself.',
+    description='django-admin-508 is a modern responsive django admin interface.',
     long_description=long_description,
     long_description_content_type=long_description_content_type,
-    author='Fabio Caccamo',
-    author_email='fabio.caccamo@gmail.com',
+    author='Raft',
+    author_email='info@goraft.tech',
     url=package_url,
     download_url='{}/archive/{}.tar.gz'.format(package_url, __version__),
     keywords=['django', 'admin', 'interface', 'responsive', 'flat', 'theme', 'custom', 'ui'],
