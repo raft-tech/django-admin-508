@@ -1,4 +1,10 @@
 # Changelog
+
+## [0.0.2](https://github.com/raft-tech/django-admin-508/releases/tag/v0.0.2) - 2021-07-01
+- Added initial changes and forked previous project.
+
+
+## Previous Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
