@@ -1,8 +1,8 @@
-[![](https://img.shields.io/pypi/pyversions/django-admin-interface.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
-[![](https://img.shields.io/pypi/djversions/django-admin-interface?color=0C4B33&logo=django&logoColor=white&label=django)](https://www.djangoproject.com/)
+[![](https://img.shields.io/pypi/pyversions/django-admin-508.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
+[![](https://img.shields.io/pypi/djversions/django-admin-508?color=0C4B33&logo=django&logoColor=white&label=django)](https://www.djangoproject.com/)
 
-[![](https://img.shields.io/pypi/v/django-admin-508.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
-[![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
+[![](https://img.shields.io/pypi/v/django-admin-508.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-508/)
+[![](https://img.shields.io/pypi/l/django-admin-508.svg?color=blue)](https://github.com/raft-tech/django-admin-508/blob/main/LICENSE.txt)
 
 # django-admin-508
 
@@ -14,12 +14,13 @@
 
 - Run `pip install django-admin-508`
 - Add `admin_interface`, `flat_responsive`, `flat` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
+
 ```python
 INSTALLED_APPS = (
     #...
     'admin_interface',
-    'flat_responsive', # only if django version < 2.0
-    'flat', # only if django version < 1.9
+    'flat_responsive',  # only if django version < 2.0
+    'flat',             # only if django version < 1.9
     'colorfield',
     #...
     'django.contrib.admin',
@@ -30,15 +31,13 @@ INSTALLED_APPS = (
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
 ```
+
 - Run ``python manage.py migrate``
-- Run ``python manage.py collectstatic``
 - Restart your application server
-- Run ``python manage.py loaddata admin_interface_theme_uswds.json``
 
 #### Upgrade
-- Run `pip install django-admin-interface --upgrade`
-- Run ``python manage.py migrate`` *(add* ``--fake-initial`` *if you are upgrading from 0.1.0 version)*
-- Run ``python manage.py collectstatic --clear``
+
+- Run `pip install django-admin-508 --upgrade`
 - Restart your application server
 
 
