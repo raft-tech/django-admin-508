@@ -4,7 +4,6 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
   (function ($) {
     'use strict';
     $(document).ready(function () {
-
       const checkboxes = document.querySelectorAll('input.action-select')
       // Add hidden label and aria attributes to each checkbox, so that each option
       // is able to be read by screen readers.
@@ -20,6 +19,18 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
 
         checkbox.parentNode.appendChild(label)
       }
+
+      const selectAll =  document.querySelector('input#action-toggle')
+      const label = document.createElement('label')
+      label.setAttribute('id', 'option-toggle-all-label')
+      label.setAttribute('for', 'option-toggle-all')
+      label.innerHTML = `Toggle All`
+      label.style.display = 'none'
+
+      selectAll.setAttribute('id', `option-toggle-all`)
+      selectAll.setAttribute('aria-describedby', `option-toggle-all-label`)
+
+      selectAll.parentNode.appendChild(label)
     });
   })(django.jQuery);
 }
