@@ -302,6 +302,7 @@ body.admin-interface .paginator a.showall:visited {
 
 /* begin fix lateral padding to align text with field labels */
 .admin-interface .module h2,
+.admin-interface .module h3,
 .admin-interface.dashboard .module caption,
 .admin-interface.dashboard .module th,
 .admin-interface .module.filtered h2,
