@@ -183,7 +183,7 @@ hr {
 
 .help, p.help, form p.help, div.help, form div.help, div.help li {
     font-size: 11px;
-    color: #999;
+    color: #666;
 }
 
 div.help ul {
@@ -964,4 +964,8 @@ table#change-history tbody th {
 
 .popup #header {
     padding: 10px 20px;
+}
+
+.object-tools a.historylink {
+    background: #666;
 }
