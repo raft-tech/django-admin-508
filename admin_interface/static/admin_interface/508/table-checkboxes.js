@@ -4,33 +4,19 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
   (function ($) {
     'use strict';
     $(document).ready(function () {
-      const checkboxes = document.querySelectorAll('input.action-select')
-      // Add hidden label and aria attributes to each checkbox, so that each option
-      // is able to be read by screen readers.
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]')
       for (const checkbox of checkboxes) {
-        const label = document.createElement('label')
-        label.setAttribute('id', `option-${checkbox.value}-label`)
-        label.setAttribute('for', `option-${checkbox.value}`)
-        label.innerHTML = `Option ${checkbox.value}`
-        label.style.display = 'none'
-
-        checkbox.setAttribute('id', `option-${checkbox.value}`)
-        checkbox.setAttribute('aria-describedby', `option-${checkbox.value}-label`)
-
-        checkbox.parentNode.appendChild(label)
+        if (checkbox.classList.contains('action-select')) {
+          // Add aria-label to each table row checkbox, so that each option is able to be read by screen readers.
+          checkbox.setAttribute('aria-label', `Row ${checkbox.value}`)
+        } else if (checkbox.id === 'action-toggle') {
+          // Similarly, add a label to the "toggle all" checkbox in the first row of the table.
+          checkbox.setAttribute('aria-label', 'Toggle all')
+        } else {
+          checkbox.setAttribute('aria-label', checkbox.parentNode.className.split('-').pop())
+        }
       }
 
-      const selectAll =  document.querySelector('input#action-toggle')
-      const label = document.createElement('label')
-      label.setAttribute('id', 'option-toggle-all-label')
-      label.setAttribute('for', 'option-toggle-all')
-      label.innerHTML = `Toggle All`
-      label.style.display = 'none'
-
-      selectAll.setAttribute('id', `option-toggle-all`)
-      selectAll.setAttribute('aria-describedby', `option-toggle-all-label`)
-
-      selectAll.parentNode.appendChild(label)
     });
   })(django.jQuery);
 }
