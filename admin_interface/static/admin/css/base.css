@@ -689,7 +689,7 @@ a.deletelink:focus, a.deletelink:hover {
     display: block;
     float: left;
     padding: 3px 12px;
-    background: #999;
+    background: #205493;
     font-weight: 400;
     font-size: 11px;
     text-transform: uppercase;
@@ -967,5 +967,5 @@ table#change-history tbody th {
 }
 
 .object-tools a.historylink {
-    background: #666;
+    background: #205493;
 }
