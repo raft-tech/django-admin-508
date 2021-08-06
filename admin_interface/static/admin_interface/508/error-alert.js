@@ -10,6 +10,12 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
       for (const error of errors) {
         error.setAttribute('role', 'alert')
       }
+
+      const errorItems = document.querySelectorAll('.errorList')
+
+      for (const error of errorItems) {
+        error.setAttribute('role', 'alert')
+      }
     });
   })(django.jQuery);
 }

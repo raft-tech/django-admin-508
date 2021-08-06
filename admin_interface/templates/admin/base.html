@@ -74,7 +74,7 @@
           {% include "admin/nav_sidebar.html" %}
         {% endblock %}
       {% endif %}
-      <div class="content">
+      <div class="content" aria-live="assertive">
         {% block messages %}
           {% if messages %}
             <ul class="messagelist">{% for message in messages %}
