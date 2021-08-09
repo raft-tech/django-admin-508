@@ -386,6 +386,14 @@
     {% endif %}
 }
 
+.admin-interface .module.filtered #changelist-filter #changelist-filter-clear a {
+    border-bottom: none;
+}
+
+#changelist-filter h3#changelist-filter-clear {
+    background: var(--darkened-bg);
+}
+
 .admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:focus,
 .admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:hover {
     color: #666;
