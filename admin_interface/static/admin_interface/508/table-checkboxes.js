@@ -6,7 +6,6 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
     $(document).ready(function () {
       const checkboxes = document.querySelectorAll('input[type="checkbox"]')
       for (const checkbox of checkboxes) {
-        console.log(checkbox);
         if (checkbox.classList.contains('action-select')) {
           // Add aria-label to each table row checkbox, so that each option is able to be read by screen readers.
           checkbox.setAttribute('aria-label', checkbox.value)
