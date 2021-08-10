@@ -303,13 +303,13 @@ table thead th .text a:focus, table thead th .text a:hover {
     background: #eee;
 }
 
-thead th.sorted a.sortremove {
-    visibility: hidden;
-}
+/*thead th.sorted a.sortremove {*/
+/*    visibility: hidden;*/
+/*}*/
 
-table thead th.sorted:hover a.sortremove {
-    visibility: visible;
-}
+/*table thead th.sorted:hover a.sortremove {*/
+/*    visibility: visible;*/
+/*}*/
 
 table thead th.sorted .sortoptions {
     display: block;
