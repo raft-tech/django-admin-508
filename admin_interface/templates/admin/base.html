@@ -1,6 +1,7 @@
+
 {% load i18n static %}<!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
-<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
@@ -18,26 +19,16 @@
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
 </head>
-{% load i18n %}
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
   data-admin-utc-offset="{% now "Z" %}">
-
-<a id="skip-main" class="screenreader-text" href="#content">
-  Skip to Main
-</a>
-<a id="skip-nav" class="screenreader-text" href="#main">
-  Skip to Nav
-</a>
-<a id="skip-filters" class="screenreader-text" href="#changelist-filter">
-  Skip to Filters
-</a>
 
 <!-- Container -->
 <div id="container">
 
     {% if not is_popup %}
     <!-- Header -->
+    {% block header %}
     <div id="header">
         <div id="branding">
         {% block branding %}{% endblock %}
@@ -69,6 +60,7 @@
         {% endblock %}
         {% block nav-global %}{% endblock %}
     </div>
+    {% endblock %}
     <!-- END Header -->
     {% block breadcrumbs %}
     <div class="breadcrumbs">
@@ -78,7 +70,7 @@
     {% endblock %}
     {% endif %}
 
-    <div class="main shifted" id="main">
+    <div class="main" id="main">
       {% if not is_popup and is_nav_sidebar_enabled %}
         {% block nav-sidebar %}
           {% include "admin/nav_sidebar.html" %}
@@ -95,7 +87,8 @@
         <!-- Content -->
         <div id="content" class="{% block coltype %}colM{% endblock %}">
           {% block pretitle %}{% endblock %}
-          {% block content_title %}{% if title %}<h2>{{ title }}</h2>{% endif %}{% endblock %}
+          {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+          {% block content_subtitle %}{% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}{% endblock %}
           {% block content %}
             {% block object-tools %}{% endblock %}
             {{ content }}
