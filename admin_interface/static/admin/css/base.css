@@ -813,7 +813,7 @@ table#change-history tbody th {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background: #417690;
+    background: #39677E;
     color: #ffc;
     overflow: hidden;
 }
@@ -865,14 +865,8 @@ table#change-history tbody th {
     text-align: right;
 }
 
-#user-tools a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-
 #user-tools a:focus, #user-tools a:hover {
-    text-decoration: none;
-    border-bottom-color: #79aec8;
-    color: #79aec8;
+    text-decoration: underline;
 }
 
 /* SIDEBAR */

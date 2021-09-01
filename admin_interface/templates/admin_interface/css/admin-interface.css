@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: dark) {
     :root .admin-interface {
         --primary: #79aec8;
-        --secondary: #417690;
+        --secondary: #39677E;
         --accent: #f5dd5d;
         --primary-fg: #fff;
         --body-fg: #333;
@@ -150,12 +150,6 @@
     color:{{ theme.css_header_link_color }};
 }
 
-.admin-interface #header #user-tools a:hover,
-.admin-interface #header #user-tools a:active {
-    color:{{ theme.css_header_link_hover_color }};
-    border-bottom-color:rgba(255, 255, 255, 0.5);
-}
-
 .admin-interface #nav-sidebar .current-app .section:link,
 .admin-interface #nav-sidebar .current-app .section:visited {
     color: {{ theme.css_module_link_selected_color }};
@@ -190,7 +184,7 @@
 
 .admin-interface .module a.section:active,
 .admin-interface .module a.section:hover {
-    color:{{ theme.css_module_link_hover_color }};
+    text-decoration: underline;
 }
 
 .admin-interface div.breadcrumbs {
@@ -205,7 +199,7 @@
 .admin-interface div.breadcrumbs a:active,
 .admin-interface div.breadcrumbs a:focus,
 .admin-interface div.breadcrumbs a:hover {
-    color:{{ theme.css_module_link_hover_color }};
+    text-decoration: underline;
 }
 
 .admin-interface fieldset.collapse.collapsed a.collapse-toggle {

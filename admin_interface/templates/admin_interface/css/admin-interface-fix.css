@@ -384,7 +384,7 @@ body.admin-interface .paginator a.showall:visited {
 .admin-interface .object-tools a:hover,
 .admin-interface .object-tools li:focus a,
 .admin-interface .object-tools li:hover a {
-    background-color:#AAAAAA;
+    background-color:#112E51;
 }
 
 /* improve responsive selector */
