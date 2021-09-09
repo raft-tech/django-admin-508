@@ -1,25 +1,52 @@
-## [0.0.3](https://github.com/raft-tech/django-admin-508/compare/v0.0.2...v0.0.3) (2021-07-21)
+## v0.0.8 (2021-09-01)
+
+*  fix: improve checkbox aria-labels [View](https://bitbucket.org/projects/test/repos/my-project/commits/4f1125d3904819b94b3d4df5caa65185528128d2)
+*  style: various contrast fixes [View](https://bitbucket.org/projects/test/repos/my-project/commits/1c46e2c1836c2ffcc809c2e6ca40323315822756)
+*  chore: bump version [View](https://bitbucket.org/projects/test/repos/my-project/commits/9424be514a00c45b2ede020f7a02d951463ede64)
 
 
-### Bug Fixes
+## v0.0.7 (2021-08-13)
 
-* Add accessible labels to checkbox elements in tables ([b14237d](https://github.com/raft-tech/django-admin-508/commit/b14237d8b64e54ce2b0d5590d929c15eaf5ce99a))
-* Add ARIA alert to form submission errors ([d004f5f](https://github.com/raft-tech/django-admin-508/commit/d004f5f005750f589440bd280ad539f3af6bb7a9))
-* Add missing title to select element ([2831a1b](https://github.com/raft-tech/django-admin-508/commit/2831a1ba4bec60037a7e61a246d5d53c2deff9c9))
-* Add missing titles to select elements in change forms ([1beaba6](https://github.com/raft-tech/django-admin-508/commit/1beaba6454735452121fe72a15c34a22f7eeba73))
-* Assorted contrast issues ([815eed6](https://github.com/raft-tech/django-admin-508/commit/815eed6c21b774a6e1f42f61d93e901ced9f3418))
-* Fix logo alt text; fix missing checkbox label edge case in tables ([d3dc503](https://github.com/raft-tech/django-admin-508/commit/d3dc5032fd1c10929a4e446bd02658f6d460b439))
-* Form labels and addition a11y warnings ([341bc3f](https://github.com/raft-tech/django-admin-508/commit/341bc3fee0ef717f67c6836ee372796508db1f5c))
-* Implement accessible ARIA markup on tooltips ([3b530d2](https://github.com/raft-tech/django-admin-508/commit/3b530d2d8c479aff664185cec9d84e235c3709b1))
-* Make headings consistent ([eea758c](https://github.com/raft-tech/django-admin-508/commit/eea758c9fb3d5c7cd6769dfe885ca8ef7a517f18))
-* Restore heading styles and fix conflict ([c7b22af](https://github.com/raft-tech/django-admin-508/commit/c7b22afca77487c0a921b13cd9cb9e4758920aac))
-* Revise solution for table checkboxes; fix missing labels in internal table checkbox elements ([b98695c](https://github.com/raft-tech/django-admin-508/commit/b98695cf5c6a03eb726802bb1b468a97b9325763))
+*  fix: missing subtitle regression [View](https://bitbucket.org/projects/test/repos/my-project/commits/093e6f7ca8337a285bcc0cfc1069d5755145a42d)
+*  chore: bump package version [View](https://bitbucket.org/projects/test/repos/my-project/commits/f1c6c0c38d735352b5b6d3b042c4be854dc2acad)
 
 
+## v0.0.6 (2021-08-11)
 
-## [0.0.2](https://github.com/raft-tech/django-admin-508/compare/dfd6ef2fd01637e35fdb84e93ced34ca63e84ecd...v0.0.2) (2021-07-01)
+*  fix: add skip-to links and minor style tweaks [View](https://bitbucket.org/projects/test/repos/my-project/commits/b0aad62a96e50021bf0403ba7f7eb770e74b74f5)
+*  feat: improve navigation and ux of filters component [View](https://bitbucket.org/projects/test/repos/my-project/commits/cb91a6537675b07b61ffc8630eac88d39ef5add0)
+*  fix: improve table filter and sorting accessibility [View](https://bitbucket.org/projects/test/repos/my-project/commits/e0e69afd289f5455185a6c430d9b60cb2b954273)
+*  chore: Bump package version [View](https://bitbucket.org/projects/test/repos/my-project/commits/80d53b72687baed56e4dadb42f020be01cfca1e8)
 
 
-### Features
+## v0.0.5 (2021-08-06)
 
-* Add changes from initial fork publication ([dfd6ef2](https://github.com/raft-tech/django-admin-508/commit/dfd6ef2fd01637e35fdb84e93ced34ca63e84ecd))
+*  fix: revert checkbox.name addition for aria-labels [View](https://bitbucket.org/projects/test/repos/my-project/commits/b1df821248991a271c6f982bcaa064c1865ea2e7)
+*  fix: improve object-tools button colors contrast [View](https://bitbucket.org/projects/test/repos/my-project/commits/dce6a40294c936f4e21437f3ffcc279c5749f452)
+*  fix: add aria-live region and additional alert roles to errors [View](https://bitbucket.org/projects/test/repos/my-project/commits/719ebb2db35cf198ce4361970258c0d4fc94d489)
+*  chore: bump package version [View](https://bitbucket.org/projects/test/repos/my-project/commits/546eb8e036478e47d6a133dca906eda84b90a83b)
+
+
+## v0.0.4 (2021-08-05)
+
+*  docs: Move old changelog, generate new one with conventional-changelog-cli [View](https://bitbucket.org/projects/test/repos/my-project/commits/9555729131be74ad2bd8c526ef4abd7ccb2b017f)
+*  fix: make some checkbox labels more readable [View](https://bitbucket.org/projects/test/repos/my-project/commits/3f4f25350b180c5b06fd2f4a9b00e02bcf231935)
+*  chore: bump package version [View](https://bitbucket.org/projects/test/repos/my-project/commits/46e644fbd87a0f3a9d6561859babb48b9121d7f4)
+
+
+## v0.0.3 (2021-07-21)
+
+*  chore: Update readme, changelog, and remove .github directory [View](https://bitbucket.org/projects/test/repos/my-project/commits/79d971d7adbfa15ca0f45497d2eee721cd149a8d)
+*  docs: Add minor fixes to leftovers from fork in README [View](https://bitbucket.org/projects/test/repos/my-project/commits/f25f5fe17ec17178fcfd6f658eba5e89baf26b0c)
+*  fix: Implement accessible ARIA markup on tooltips [View](https://bitbucket.org/projects/test/repos/my-project/commits/3b530d2d8c479aff664185cec9d84e235c3709b1)
+*  fix: Add accessible labels to checkbox elements in tables [View](https://bitbucket.org/projects/test/repos/my-project/commits/b14237d8b64e54ce2b0d5590d929c15eaf5ce99a)
+*  fix: Add ARIA alert to form submission errors [View](https://bitbucket.org/projects/test/repos/my-project/commits/d004f5f005750f589440bd280ad539f3af6bb7a9)
+*  fix: Make headings consistent [View](https://bitbucket.org/projects/test/repos/my-project/commits/eea758c9fb3d5c7cd6769dfe885ca8ef7a517f18)
+*  fix: Fix logo alt text; fix missing checkbox label edge case in tables [View](https://bitbucket.org/projects/test/repos/my-project/commits/d3dc5032fd1c10929a4e446bd02658f6d460b439)
+*  fix: Revise solution for table checkboxes; fix missing labels in internal table checkbox elements [View](https://bitbucket.org/projects/test/repos/my-project/commits/b98695cf5c6a03eb726802bb1b468a97b9325763)
+*  fix: Restore heading styles and fix conflict [View](https://bitbucket.org/projects/test/repos/my-project/commits/c7b22afca77487c0a921b13cd9cb9e4758920aac)
+*  fix: Add missing title to select element [View](https://bitbucket.org/projects/test/repos/my-project/commits/2831a1ba4bec60037a7e61a246d5d53c2deff9c9)
+*  fix: Add missing titles to select elements in change forms [View](https://bitbucket.org/projects/test/repos/my-project/commits/1beaba6454735452121fe72a15c34a22f7eeba73)
+*  fix: Assorted contrast issues [View](https://bitbucket.org/projects/test/repos/my-project/commits/815eed6c21b774a6e1f42f61d93e901ced9f3418)
+*  fix: Form labels and addition a11y warnings [View](https://bitbucket.org/projects/test/repos/my-project/commits/341bc3fee0ef717f67c6836ee372796508db1f5c)
+*  chore: Bump package version [View](https://bitbucket.org/projects/test/repos/my-project/commits/48238037541bca0bd59d6eff2ad812f4daa704ce)
