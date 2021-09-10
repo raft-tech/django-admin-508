@@ -253,6 +253,7 @@
 
 .admin-interface a:hover {
     color:{{ theme.css_generic_link_hover_color }};
+    text-decoration: underline;
 }
 
 .admin-interface thead th a,
