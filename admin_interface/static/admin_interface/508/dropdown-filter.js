@@ -4,7 +4,6 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
   (function ($) {
     'use strict';
     $(document).ready(function () {
-      console.log("LOADED")
       const filters = document.querySelectorAll('#changelist-filter .list-filter-dropdown select')
       let options = ''
       // Override the default onchange handler of each filter
@@ -13,13 +12,11 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
         filter.onchange = function() {
           const value = this.options[this.selectedIndex].value
           options = options.concat(value)
-          console.log(options)
         };
       }
 
       const applyFiltersButton = document.querySelector('#submit-filters');
       applyFiltersButton.onclick = function () {
-        console.log("SUBMIT", options)
         window.location = options
       };
 
