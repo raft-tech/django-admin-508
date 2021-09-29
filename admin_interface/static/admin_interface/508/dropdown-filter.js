@@ -16,10 +16,11 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
       }
 
       const applyFiltersButton = document.querySelector('#submit-filters');
-      applyFiltersButton.onclick = function () {
-        window.location = options
-      };
-
+      if (applyFiltersButton) {
+        applyFiltersButton.onclick = function () {
+          window.location = options
+        };
+      }
     });
   })(django.jQuery);
 }
