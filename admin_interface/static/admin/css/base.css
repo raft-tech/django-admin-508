@@ -284,9 +284,9 @@ thead th.sorted {
     background: #eee;
 }
 
-thead th.sorted .text {
-    padding-right: 42px;
-}
+/*thead th.sorted .text {*/
+/*    padding-right: 42px;*/
+/*}*/
 
 table thead th .text span {
     padding: 8px 10px;

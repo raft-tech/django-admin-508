@@ -11,7 +11,9 @@
 <tr>
 {% for header in result_headers %}
 <th scope="col" {{ header.class_attrib }}>
-   {% if header.sortable %}
+  <div class="flex-container">
+  <div tabindex=0 class="text">{% if header.sortable %}<a tabindex=1 aria-label="Sort by {{ header.text|capfirst }}" href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
+    {% if header.sortable %}
      {% if header.sort_priority > 0 %}
        <div class="sortoptions">
          <a class="sortremove" href="{{ header.url_remove }}" title="{% translate "Remove from sorting" %}" aria-label="Remove {{ header.text|capfirst }} from sorting"></a>
@@ -19,9 +21,9 @@
          <a href="{{ header.url_toggle }}" class="toggle {% if header.ascending %}ascending{% else %}descending{% endif %}" title="{% translate "Toggle sorting" %}" aria-label="Toggle {{ header.text|capfirst }} sort by {% if header.ascending %}ascending{% else %}descending{% endif %}"></a>
        </div>
      {% endif %}
-   {% endif %}
-   <div class="text">{% if header.sortable %}<a aria-label="Sort by {{ header.text|capfirst }}" href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
-   <div class="clear"></div>
+    {% endif %}
+    <div class="clear"></div>
+  </div>
 </th>{% endfor %}
 </tr>
 </thead>

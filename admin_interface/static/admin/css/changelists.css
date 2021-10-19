@@ -58,6 +58,10 @@
     vertical-align: middle;
 }
 
+#changelist .flex-container {
+    display: flex;
+}
+
 #changelist table thead th.action-checkbox-column {
     width: 1.5em;
     text-align: center;
