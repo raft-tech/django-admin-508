@@ -40,12 +40,9 @@ SILENCED_SYSTEM_CHECKS = ['security.W019']
 - Run `pip install django-admin-508 --upgrade`
 - Restart your application server
 
-
-## Screenshots
-
-## Testing
-
 ## License
 Released under [MIT License](LICENSE.txt).
 
 ## See also
+
+This project started out as a fork of the excellent [Django Admin Interface](https://github.com/fabiocaccamo/django-admin-interface).
