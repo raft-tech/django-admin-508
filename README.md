@@ -1,3 +1,4 @@
+
 [![](https://img.shields.io/pypi/pyversions/django-admin-508.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
 [![](https://img.shields.io/pypi/djversions/django-admin-508?color=0C4B33&logo=django&logoColor=white&label=django)](https://www.djangoproject.com/)
 
@@ -39,6 +40,48 @@ SILENCED_SYSTEM_CHECKS = ['security.W019']
 
 - Run `pip install django-admin-508 --upgrade`
 - Restart your application server
+
+## Publishing Updates
+
+https://packaging.python.org/tutorials/packaging-projects/
+https://realpython.com/installable-django-app/
+
+```
+python3 -m pip install --upgrade build
+python3 -m build
+
+
+python3 -m pip install --upgrade twine
+python3 -m twine upload --repository testpypi dist/*
+```
+
+
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python makemigrations.py
+```
+
+### In da508
+- clear the dist dir
+- increment version
+- build
+- twine upload
+
+### In TDRS
+- backend: `dc up`
+- ` docker compose run web python -m pipenv install django-admin-508==0.0.8`
+
+
+## local development
+- create empty django project
+- create venv
+- `build` package in another directory
+- pip install -e /path/to/508
+- migrate
+
+ 
 
 ## License
 Released under [MIT License](LICENSE.txt).
