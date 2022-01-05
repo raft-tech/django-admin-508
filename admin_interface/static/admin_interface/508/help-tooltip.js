@@ -8,8 +8,16 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
 
       // Add role="tooltip" and tabindex="0", allowing tooltips to be read by screen readers.
       for (const tooltip of tooltips) {
-        tooltip.setAttribute('role', 'tooltip')
-        tooltip.setAttribute('tabindex', '0')
+
+        const parent = tooltip.parent
+        const titleText = tooltip.title
+        const toolTipSpan = document.createElement('span')
+
+        toolTipSpan.innerHTML = titleText
+
+        parent.append(toolTipSpan)
+
+        parent.removeChild(tooltip)
       }
     });
   })(django.jQuery);
