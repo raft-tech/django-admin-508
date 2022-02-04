@@ -23,10 +23,10 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
   data-admin-utc-offset="{% now "Z" %}">
 
-<a id="skip-main" class="screenreader-text" href="#content">
+<a id="skip-main" class="screenreader-text" href="#main">
   Skip to Main
 </a>
-<a id="skip-nav" class="screenreader-text" href="#main">
+<a id="skip-nav" class="screenreader-text" href="#toggle-nav-sidebar">
   Skip to Nav
 </a>
 <a id="skip-filters" class="screenreader-text" href="#changelist-filter">
@@ -80,7 +80,7 @@
     {% endblock %}
     {% endif %}
 
-    <div class="main" id="main">
+    <div class="main">
       {% if not is_popup and is_nav_sidebar_enabled %}
         {% block nav-sidebar %}
           {% include "admin/nav_sidebar.html" %}
@@ -95,9 +95,9 @@
           {% endif %}
         {% endblock messages %}
         <!-- Content -->
-        <div id="content" class="{% block coltype %}colM{% endblock %}">
+        <div  class="{% block coltype %}colM{% endblock %}">
           {% block pretitle %}{% endblock %}
-          {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+          {% block content_title %}{% if title %}<h1 id="main">{{ title }}</h1>{% endif %}{% endblock %}
           {% block content_subtitle %}{% if subtitle %}<h2>{{ subtitle }}</h2>{% endif %}{% endblock %}
           {% block content %}
             {% block object-tools %}{% endblock %}
