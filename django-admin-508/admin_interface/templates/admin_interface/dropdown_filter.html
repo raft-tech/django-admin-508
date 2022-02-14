@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<div class="list-filter-dropdown">
+    <h3>{% blocktrans with title as filter_title %} By {{ filter_title }} {% endblocktrans %}</h3>
+    <div align="right">
+        <select title="{{ title }}">
+        {% for choice in choices %}
+            <option {% if choice.selected %}selected{% endif %} value="{{ choice.query_string|iriencode }}">{{ choice.display }}</option>
+        {% endfor %}
+        </select>
+    </div>
+</div>

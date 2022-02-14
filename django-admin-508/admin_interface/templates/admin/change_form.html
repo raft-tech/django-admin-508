@@ -1,0 +1,9 @@
+{% extends 'admin/change_form.html' %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+    {{ block.super }}
+    {% include "admin_interface/help-tooltip.html" %}
+    {% include "admin_interface/error-alert.html" %}
+    {% include "admin_interface/form-labels.html" %}
+{% endblock %}

@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    command: >
+      sh -c "python mysite/manage.py makemigrations
+      && python mysite/manage.py migrate
+      && python mysite/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
