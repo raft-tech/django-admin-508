@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
 
 import django
-from django import template, VERSION
+from django import VERSION, template
 from django.conf import settings
+
 if django.VERSION < (1, 10):
     from django.core.urlresolvers import NoReverseMatch, reverse
 else:
     from django.urls import NoReverseMatch, reverse
-from django.utils import translation
-
-from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
-from admin_interface.models import Theme
-from admin_interface.version import __version__
 
 import re
 
+from admin_interface.cache import (get_cached_active_theme,
+                                   set_cached_active_theme)
+from admin_interface.models import Theme
+from admin_interface.version import __version__
+from django.utils import translation
 
 register = template.Library()
 
@@ -78,3 +79,16 @@ def get_admin_interface_theme(context):
 @simple_tag(takes_context=False)
 def get_admin_interface_version():
     return __version__
+@simple_tag(takes_context=True)
+
+def get_508_compliant_error_message(context):
+    """Add a 508 compliant error note to the surrounding context"""
+    count = len(context['errors'])
+    if count == 1:
+        context['error_message'] = 'Please correct the single error below.'
+    elif count > 1:
+        context['error_message'] = f"Please correct the {count} errors below."
+
+    return ""
+
+
