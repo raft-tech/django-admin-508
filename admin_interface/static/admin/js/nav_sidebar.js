@@ -1,15 +1,25 @@
 'use strict';
 {
-  alert("yo")
   const toggleNavSidebar = document.getElementById('toggle-nav-sidebar');
+  const navSidebar = document.getElementById('nav-sidebar');
+  const openSidebarButton = document.getElementById('open-nav-sidebar-button')
   if (toggleNavSidebar !== null) {
+
     const navLinks = document.querySelectorAll('#nav-sidebar a');
+
     function disableNavLinkTabbing() {
+      navSidebar.classList.add('close')
+      openSidebarButton.classList.remove('hidden')
+
       for (const navLink of navLinks) {
         navLink.tabIndex = -1;
       }
     }
     function enableNavLinkTabbing() {
+
+      navSidebar.classList.remove('close')
+      openSidebarButton.classList.add('hidden')
+
       for (const navLink of navLinks) {
         navLink.tabIndex = 0;
       }
@@ -26,21 +36,24 @@
     // main.classList.toggle('shifted', navSidebarIsOpen === 'true');
 
     toggleNavSidebar.addEventListener('click', () => {
-      if (navSidebarIsOpen === 'true') {
-        navSidebarIsOpen = 'false';
-        disableNavLinkTabbing();
-      } else {
-        navSidebarIsOpen = 'true';
-        enableNavLinkTabbing();
-      }
+      console.log("I am be clicked")
+      navSidebarIsOpen = 'false';
+      disableNavLinkTabbing();
       localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
-      // main.classList.toggle('shifted');
+      main.classList.toggle('shifted');
+    });
+    
+    openSidebarButton.addEventListener('click', () => {
+      console.log("I am be clicked")
+      navSidebarIsOpen = 'true';
+      enableNavLinkTabbing();
+      localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
+      main.classList.toggle('shifted');
     });
   }
 
   function initSidebarQuickFilter() {
     const options = [];
-    const navSidebar = document.getElementById('nav-sidebar');
     if (!navSidebar) {
       return;
     }

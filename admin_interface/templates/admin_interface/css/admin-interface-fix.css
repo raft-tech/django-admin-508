@@ -414,23 +414,19 @@ body.admin-interface .paginator a.showall:visited {
     left: 0;
     z-index: 20;
     flex: 0 0 30px;
-    width: 30px;
+    /* width: 30px; */
     height: 45px;
     margin-top: 10px;
     margin-right: 10px;
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     font-size: 16px;
-    border: 1px solid #eaeaea;
+    /* border: 1px solid #eaeaea; */
     border-left: none;
     outline: none;
     -webkit-box-shadow: 4px 2px 8px -4px #DBDBDB;
     -moz-box-shadow: 4px 2px 8px -4px #DBDBDB;
     box-shadow: 4px 2px 8px -4px #DBDBDB;
     /*transition: left .3s;*/
-}
-
-.admin-interface .toggle-nav-sidebar::before {
-    margin-top: -2px;
 }
 
 .admin-interface .main > #nav-sidebar + .content,
@@ -442,40 +438,40 @@ body.admin-interface .paginator a.showall:visited {
 @media (max-width:1279px) {
     .admin-interface #nav-sidebar,
     .admin-interface #toggle-nav-sidebar {
-        display: none;
+        /* display: none; */
     }
 }
 
 .admin-interface #nav-sidebar {
-    flex: 0 0 320px;
-    left: -320px;
-    margin-left: -360px;
+    /* flex: 0 0 320px; */
+    /* left: -320px; */
+    /* margin-left: -360px; */
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    padding: 40px 40px 40px 0px;
+    padding: 0px 7px 40px 10px;
     border-top: none;
     border-bottom: none;
     border-left: none;
-    /*transition: left .3s, margin-left .3s;*/
+    transition: left .3s, margin-left .3s;
 }
 
-@media (min-width:1280px) {
-    .admin-interface #main.shifted > #toggle-nav-sidebar {
-        left: 359px;
-    }
-    .admin-interface #main.shifted > #nav-sidebar {
-        left: 0px;
-        margin-left: 0;
-    }
-    .admin-interface #main:not(.shifted) > .content {
-        max-width: 100%;
-    }
-    .admin-interface.change-list:not(.popup) #main.shifted > #nav-sidebar + .content,
-    .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content {
-        max-width: calc(100% - 360px);
-    }
-}
+/* @media (min-width:1280px) { */
+/*     .admin-interface #main.shifted > #toggle-nav-sidebar { */
+/*         left: 359px; */
+/*     } */
+/*     .admin-interface #main.shifted > #nav-sidebar { */
+/*         left: 0px; */
+/*         margin-left: 0; */
+/*     } */
+/*     .admin-interface #main:not(.shifted) > .content { */
+/*         max-width: 100%; */
+/*     } */
+/*     .admin-interface.change-list:not(.popup) #main.shifted > #nav-sidebar + .content, */
+/*     .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content { */
+/*         max-width: calc(100% - 360px); */
+/*     } */
+/* } */
 
 /* fixed related widget and select2 */
 /* begin fix issue #10 - Related widget broken in long tabular inline */
