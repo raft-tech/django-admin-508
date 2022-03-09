@@ -3,9 +3,13 @@ version: "3.9"
 services:
   web:
     build: .
+    environment:
+      - DJANGO_SUPERUSER_PASSWORD=djangopassword
     command: >
-      sh -c "python mysite/manage.py makemigrations
+      sh -c "pip install -r requirements.txt
+      && python mysite/manage.py makemigrations
       && python mysite/manage.py migrate
+      && python mysite/manage.py createsuperuser --noinput --username django --email django@python.org
       && python mysite/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
