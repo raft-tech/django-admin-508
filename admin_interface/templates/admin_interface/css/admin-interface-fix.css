@@ -603,3 +603,7 @@ body.admin-interface .paginator a.showall:visited {
   position: static;
   margin: auto;
 }
+
+.content {
+  width:72%;
+}
