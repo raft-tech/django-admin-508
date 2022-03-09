@@ -13,10 +13,11 @@
     flex: 0 0 23px;
     /* width: 23px; */
     border: solid ;
-    background-color: var(--link-fg);
+    border-color: var(--admin-interface-generic-link-color);
+    background-color: var(--admin-interface-generic-link-color);
     cursor: pointer;
     font-size: 20px;
-    color: var(--body-bg);
+    color: var(--body-fg);
     padding: 0;
 }
 
