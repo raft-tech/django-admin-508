@@ -6,6 +6,7 @@
 
 .toggle-nav-sidebar {
     z-index: 20;
+    float:right;
     left: 0;
     display: flex;
     align-items: center;
@@ -17,7 +18,7 @@
     background-color: var(--admin-interface-generic-link-color);
     cursor: pointer;
     font-size: 20px;
-    color: var(--body-fg);
+    color: white;
     padding: 0;
 }
 
