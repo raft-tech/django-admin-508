@@ -29,14 +29,19 @@
     let navSidebarIsOpen = localStorage.getItem('django.admin.navSidebarIsOpen');
     if (navSidebarIsOpen === null) {
       navSidebarIsOpen = 'true';
+
+      enableNavLinkTabbing();
     }
     if (navSidebarIsOpen === 'false') {
       disableNavLinkTabbing();
     }
+
+    if (navSidebarIsOpen === 'true') {
+      enableNavLinkTabbing();
+    }
     // main.classList.toggle('shifted', navSidebarIsOpen === 'true');
 
     toggleNavSidebar.addEventListener('click', () => {
-      console.log("I am be clicked")
       navSidebarIsOpen = 'false';
       disableNavLinkTabbing();
       localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
@@ -44,7 +49,6 @@
     });
     
     openSidebarButton.addEventListener('click', () => {
-      console.log("I am be clicked")
       navSidebarIsOpen = 'true';
       enableNavLinkTabbing();
       localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
