@@ -27,11 +27,6 @@
     border-right: 0;
 }
 
-.toggle-nav-sidebar:hover,
-.toggle-nav-sidebar:focus {
-    background-color: var(--darkened-bg);
-}
-
 #nav-sidebar {
     z-index: 15;
     /* flex: 0 0 275px; */
@@ -56,9 +51,9 @@
 /*     content: '\00BB'; */
 /* } */
 
-.main.shifted .toggle-nav-sidebar::before {
+/* .main.shifted .toggle-nav-sidebar::before {
     content: '\00AB';
-}
+} */
 
 .main.shifted > #nav-sidebar {
     margin-left: 0;
