@@ -39,20 +39,17 @@
     if (navSidebarIsOpen === 'true') {
       enableNavLinkTabbing();
     }
-    // main.classList.toggle('shifted', navSidebarIsOpen === 'true');
 
     toggleNavSidebar.addEventListener('click', () => {
       navSidebarIsOpen = 'false';
       disableNavLinkTabbing();
       localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
-      // main.classList.toggle('shifted');
     });
     
     openSidebarButton.addEventListener('click', () => {
       navSidebarIsOpen = 'true';
       enableNavLinkTabbing();
       localStorage.setItem('django.admin.navSidebarIsOpen', navSidebarIsOpen);
-      // main.classList.toggle('shifted');
     });
   }
 
