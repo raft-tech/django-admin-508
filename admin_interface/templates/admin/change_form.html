@@ -1,12 +1,9 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_urls static admin_modify admin_interface_tags %}
-
-
 {% block extrahead %}{{ block.super }}
 <script src="{% url 'admin:jsi18n' %}"></script>
 {{ media }}
 {% endblock %}
-
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/forms.css" %}">{% endblock %}
 
 {% block coltype %}colM{% endblock %}
@@ -65,7 +62,9 @@
 
 {% block submit_buttons_bottom %}{% submit_row %}{% endblock %}
 
+
 {% block admin_change_form_document_ready %}
+    <script src="{% static 'admin_interface/508/required-field-error.js' %}" defer></script>
     <script id="django-admin-form-add-constants"
             src="{% static 'admin/js/change_form.js' %}"
             {% if adminform and add %}
@@ -79,34 +78,6 @@
     {% include "admin_interface/help-tooltip.html" %}
     {% include "admin_interface/error-alert.html" %}
     {% include "admin_interface/form-labels.html" %}
-    <script>
-
-     /** global: django */
-
-     if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
-       (function ($) {
-         'use strict';
-         $(document).ready(function () {
-           let errorsProbably=document.querySelectorAll('.form-row ul.errorlist li')
-           console.log({errorsProbably})
-           for(let el of errorsProbably) {
-             let formRow = el.parentNode.parentNode
-             console.log({el})
-             console.log({formRow})
-             if(el.textContent === "This field is required.") {
-               let label = formRow.querySelector('div label').innerHTML
-               console.log({label})
-
-               label = label.substring(0, label.length-1)
-               el.innerHTML = `${label} is required.`
-             }
-
-           }
-
-         });
-       })(django.jQuery);
-     }
-    </script>
 {% endblock %}
 
 {# JavaScript for prepopulated fields #}
