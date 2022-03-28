@@ -6,7 +6,7 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
   (function ($) {
     'use strict';
     $(document).ready(function () {
-      document.querySelector('errornote').focus()
+      document.querySelector('.errornote').focus()
       let errorsProbably=document.querySelectorAll('.form-row ul.errorlist li')
       console.log({errorsProbably})
       for(let el of errorsProbably) {
