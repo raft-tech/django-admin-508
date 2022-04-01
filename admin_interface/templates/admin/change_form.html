@@ -38,9 +38,10 @@
 {% if save_on_top %}{% block submit_buttons_top %}{% submit_row %}{% endblock %}{% endif %}
 {% if errors %}
   {% get_508_compliant_error_message %}
-    <p class="errornote">
+    <p class="errornote" focus tabindex="-1">
       {% translate error_message %}
     </p>
+    <script src="{% static 'admin_interface/508/required-field-error.js' %}" defer></script>
     {{ adminform.form.non_field_errors }}
 {% endif %}
 
@@ -64,7 +65,6 @@
 
 
 {% block admin_change_form_document_ready %}
-    <script src="{% static 'admin_interface/508/required-field-error.js' %}" defer></script>
     <script id="django-admin-form-add-constants"
             src="{% static 'admin/js/change_form.js' %}"
             {% if adminform and add %}
