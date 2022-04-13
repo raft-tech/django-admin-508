@@ -634,6 +634,7 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
 }
 
 .addlink {
+    margin-right: 5px;
     padding-left: 16px;
     background: url(../img/icon-addlink.svg) 0 1px no-repeat;
 }
@@ -750,6 +751,7 @@ table#change-history tbody th {
 #container > .main {
     display: flex;
     flex: 1 0 auto;
+    padding-top: 16px;
 }
 
 .main > .content {

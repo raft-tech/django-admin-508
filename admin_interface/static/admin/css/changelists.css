@@ -4,6 +4,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-right: 5px;
 }
 
 #changelist .changelist-form-container {
@@ -137,6 +138,7 @@
     /* background: var(--darkened-bg); */
     border-left: none;
     /* margin: 0 0 0 30px; */
+    padding: 0 5px 0 5px;
 }
 
 #changelist-filter h2 {
