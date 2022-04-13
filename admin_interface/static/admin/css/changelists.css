@@ -96,7 +96,7 @@
 
 #toolbar #searchbar {
     height: 19px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color) !important;
     padding: 2px 5px;
     margin: 0;
     vertical-align: top;
@@ -105,7 +105,7 @@
 }
 
 #toolbar #searchbar:focus {
-    border-color: var(--body-quiet-color);
+    border-color: var(--body-quiet-color) !important;
 }
 
 #toolbar form input[type="submit"] {
