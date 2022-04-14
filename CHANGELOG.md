@@ -1,3 +1,11 @@
+## v0.2.0 (2021-04-14)
+
+* fix: style regressions on filter components
+* fix: style regressions on navbar
+* fix: address cross-os style issue on some components
+
+
+
 ## v0.0.8 (2021-09-01)
 
 *  fix: improve checkbox aria-labels [View](https://bitbucket.org/projects/test/repos/my-project/commits/4f1125d3904819b94b3d4df5caa65185528128d2)
