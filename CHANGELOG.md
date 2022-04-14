@@ -1,4 +1,4 @@
-## v0.2.0 (2021-04-14)
+## v0.2.0 (2022-04-14)
 
 * fix: style regressions on filter components
 * fix: style regressions on navbar
