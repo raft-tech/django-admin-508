@@ -12,7 +12,7 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
         filter.onchange = function() {
           const value = this.options[this.selectedIndex].value
           if (options !== '') {
-          	options.replace('?', '&')
+          	value = value.replace('?', '&')
 	        }
           options = options.concat(value)
         };
