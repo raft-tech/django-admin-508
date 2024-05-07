@@ -11,6 +11,9 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
         // This needs to be a function expression so `this` references the filter elements themselves
         filter.onchange = function() {
           const value = this.options[this.selectedIndex].value
+          if (options !== '') {
+          	options.replace('?', '&')
+	        }
           options = options.concat(value)
         };
       }
