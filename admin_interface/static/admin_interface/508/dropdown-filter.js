@@ -10,7 +10,7 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
       for (const filter of filters) {
         // This needs to be a function expression so `this` references the filter elements themselves
         filter.onchange = function() {
-          const value = this.options[this.selectedIndex].value
+          let value = this.options[this.selectedIndex].value
           if (options !== '') {
           	value = value.replace('?', '&')
 	        }
