@@ -1,3 +1,7 @@
+## v0.2.1 (2024-05-07)
+
+* fix: filter-list was concatenated incorrectly. Changed ? with & on tailing filters 
+
 ## v0.2.0 (2022-04-14)
 
 * fix: style regressions on filter components
