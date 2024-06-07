@@ -9,8 +9,8 @@ services:
       sh -c "pip install -r requirements.txt
       && python /code/mysite/manage.py makemigrations
       && python /code/mysite/manage.py migrate
-      && python /code/mysite/manage.py createsuperuser --noinput --username msohani --email django@python.org
-      || python /code/mysite/manage.py runserver 0.0.0.0:8000"
+      && python /code/mysite/manage.py createsuperuser --noinput --username admin --email admin@fakeemail.com
+      && python /code/mysite/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
