@@ -1,17 +1,15 @@
-version: "3.9"
-
 services:
   web:
     build: .
     environment:
       - DJANGO_SUPERUSER_PASSWORD=123123
-      - DJANGO_SETTINGS_MODULE=mysite.settings
+      - DJANGO_SETTINGS_MODULE=django508.settings
     command: >
       sh -c "pip install -r requirements.txt
-      && python ./mysite/manage.py makemigrations
-      && python ./mysite/manage.py migrate
-      && python ./mysite/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword
-      && python ./mysite/manage.py runserver 0.0.0.0:8000"
+      && python ./django508/manage.py makemigrations
+      && python ./django508/manage.py migrate
+      && python ./django508/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword
+      && python ./django508/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:

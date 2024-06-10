@@ -6,6 +6,7 @@ if (typeof (django) !== 'undefined' && typeof (django.jQuery) !== 'undefined') {
     $(document).ready(function () {
       const filters = document.querySelectorAll('#changelist-filter .list-filter-dropdown select')
       let options = ''
+      console.log('______________ WE ARE HERE ______________')
       // Override the default onchange handler of each filter
       for (const filter of filters) {
         // This needs to be a function expression so `this` references the filter elements themselves
