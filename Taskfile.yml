@@ -16,12 +16,6 @@ tasks:
     cmds:
       - docker-compose up -d
 
-  is-up:
-    desc: Check if web server is up
-    cmds:
-      - curl -s http://localhost:8000/ | grep -q 'Django'
-    silent: true
-
   build:
     desc: Build web server
     cmds:
@@ -37,21 +31,12 @@ tasks:
     cmds:
       - docker-compose logs -f
 
-  init-db:
-    desc: Initialize database with sample datas
-    cmds:
-      - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
-        silent: true
-      - docker-compose run --rm wait_postgres
-      - docker-compose exec migrate /migrate up
-      - sh -c "cat sample_data.sql | docker exec -i --user postgres `docker-compose ps -q postgres` psql polls"
-
-  enter:
+  bash:
     desc: Open shell in app container
     cmds:
       - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
         silent: true
-      - docker-compose exec app bash
+      - docker-compose exec web bash
 
   tests:
     desc: Execute tests
