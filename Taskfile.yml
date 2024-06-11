@@ -37,6 +37,20 @@ tasks:
       - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
         silent: true
       - docker-compose exec web bash
+  
+  test-e2e-local:
+    desc: Run cypress tests on the local machine with GUI
+    cmds:
+      - task up
+      - cd cypress && npm run test:e2e
+      - task down
+  
+  test-e2e:
+    desc: Run cypress tests headless
+    cmds:
+      - task up
+      - cd cypress && npm run test:e2e-ci
+      - task down
 
   tests:
     desc: Execute tests
@@ -45,6 +59,7 @@ tasks:
     cmds:
       - task up
       - docker-compose exec web sh -c "pytest $PYTEST_ARGS"
+      - task test-e2e
     
 
   clean:
