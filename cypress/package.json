@@ -1,0 +1,34 @@
+{
+  "name": "cypress-508-tests",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "test:e2e": "cypress open",
+    "test:e2e-ci": "cypress run --headless -b chrome"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^14.0.0",
+    "@cypress/webpack-preprocessor": "^5.15.5",
+    "cypress": "^11.1.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "test/*/[filepath].js",
+      "test/common-steps/*.js",
+      "test/admin-login/*.js",
+      "test/admin-filters/*.js"
+    ]
+  }
+}
