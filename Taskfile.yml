@@ -1,0 +1,61 @@
+version: '3'
+tasks:
+  default:
+    deps:
+      - task: init
+
+  test-echo:
+    desc: Test echo
+    env:
+      CONFIG: '{{.CONFIG | default "Debug"}}'
+    cmds:
+      - echo $CONFIG
+
+  up:
+    desc: Start web server
+    cmds:
+      - docker-compose up -d
+
+  build:
+    desc: Build web server
+    cmds:
+      - docker-compose build
+
+  down:
+    desc: Stop web server
+    cmds:
+      - docker-compose down
+
+  logs:
+    desc: Show logs
+    cmds:
+      - docker-compose logs -f
+
+  bash:
+    desc: Open shell in app container
+    cmds:
+      - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
+        silent: true
+      - docker-compose exec web bash
+
+  tests:
+    desc: Execute tests
+    env:
+      PYTEST_ARGS: '{{.PYTEST_ARGS | default "."}}'
+    cmds:
+      - task up
+      - docker-compose exec web sh -c "pytest $PYTEST_ARGS"
+    
+
+  clean:
+    desc: Stop and destroy all container and databases
+    cmds:
+      - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
+        silent: true
+      - task: down
+      - docker-compose rm -f
+      - rm -rf build/
+      - rm -rf .tox/
+      - rm -rf .pytest_cache/
+      - rm -rf __pycache__/
+      - rm -rf django_admin_508.egg-info/
