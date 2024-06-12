@@ -14,7 +14,12 @@ commands:
   install_node_packages:
     description: Install node packages for Cypress test suite
     steps:
-      - run: cd cypress && npm install && cd ..
+      - run: 
+          name: Install Cypress
+          command: cd cypress && npm install && cd ..
+      - run:
+          name: Install Task
+          command: cd cypress && npm install -g @go-task/cli && cd ..
 
 jobs:
   build_and_test:
