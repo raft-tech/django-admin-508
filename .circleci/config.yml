@@ -15,7 +15,11 @@ jobs:
     executor: docker-executor
     steps:
       - checkout
-      - run: task tests
+      - run: 
+        command: |
+          docker-compose up -d
+          docker-compose exec web sh -c "pytest $PYTEST_ARGS"
+          cd cypress && npm run test:e2e-ci
 
 workflows:
   build_and_test:
