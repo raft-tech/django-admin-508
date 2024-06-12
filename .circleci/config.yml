@@ -16,7 +16,7 @@ commands:
     steps:
       - run: cd cypress
       - node/install-packages
-      - cd ..
+      - run: cd ..
 
 jobs:
   build_and_test:
