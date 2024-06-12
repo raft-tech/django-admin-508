@@ -1,7 +1,6 @@
 version: 2.1
 
 orbs:
-  taskfile: threecomma/taskfile@0.1.0
   node: circleci/node@5.2.0
 
 executors:
