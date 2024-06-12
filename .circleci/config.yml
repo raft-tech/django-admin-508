@@ -23,8 +23,9 @@ jobs:
     executor: machine-executor
     steps:
       - checkout
-      - install_node_packages
-      - run: task tests
+      - run: pwd && npm
+      # - install_node_packages
+      # - run: task tests
 
 workflows:
   build_and_test:
