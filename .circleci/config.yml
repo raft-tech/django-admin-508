@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   taskfile: threecomma/taskfile@0.1.0
-  jq: circleci/jq@2.2.0
+  node: circleci/node@5.2.0
 
 executors:
   machine-executor:
@@ -15,11 +15,8 @@ jobs:
     executor: machine-executor
     steps:
       - checkout
-      - run: 
-          command: |
-            docker-compose up -d
-            docker-compose exec web sh -c "pytest $PYTEST_ARGS"
-            cd cypress && npm run test:e2e-ci
+      - node/install-packages
+      - run: task tests
 
 workflows:
   build_and_test:
