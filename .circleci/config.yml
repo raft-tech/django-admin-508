@@ -5,14 +5,14 @@ orbs:
   jq: circleci/jq@2.2.0
 
 executors:
-  docker-executor:
-    docker:
-      - image: cimg/python:3.10.4
-        user: root
+  machine-executor:
+    machine:
+      docker_layer_caching: false
+      image: ubuntu-2204:2024.01.1
     
 jobs:
   build_and_test:
-    executor: docker-executor
+    executor: machine-executor
     steps:
       - checkout
       - run: 
