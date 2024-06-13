@@ -52,7 +52,7 @@ Cypress.Commands.add('adminApiLogin', () => {
 })
 
 Cypress.Commands.add('adminLogin', () => {
-  cy.visit(`${Cypress.env('adminUrl')}/login`).then(() => {
+  cy.visit(`${Cypress.env('adminUrl')}/login/?next=/admin/`).then(() => {
     cy.get('input[name="username"]').type(Cypress.env('adminUsername'))
     cy.get('input[name="password"]').type(Cypress.env('adminPassword'))
     cy.get('input[type="submit"]').click()
