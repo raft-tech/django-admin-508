@@ -36,7 +36,9 @@ on:
       - master
       - 'release/**'
     paths:
-      - 'scripts/**'
+      - 'admin_interface/**'
+      - 'cypress/**'
+      - 'django508/**'
       - '.circleci/**'
       - '.github/**'
 jobs:
