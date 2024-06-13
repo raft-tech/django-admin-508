@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .filters import UserFilter
+from . import filters
 from .models import DummyModel, DummyModel2
 from .filters import MultipleChoiceListFilter
 
