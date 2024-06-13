@@ -1,15 +1,16 @@
 version: '3'
-tasks:
-  default:
-    deps:
-      - task: init
 
-  test-echo:
-    desc: Test echo
-    env:
-      CONFIG: '{{.CONFIG | default "Debug"}}'
+tasks:
+
+  init:
+    desc: Initialize the project
     cmds:
-      - echo $CONFIG
+      - docker-compose up -d --build
+      - docker-compose exec bash sh -c "pip install -r requirements.txt"
+      - docker-compose exec bash sh -c "python ./django508/manage.py makemigrations"
+      - docker-compose exec bash sh -c "python ./django508/manage.py migrate"
+      - docker-compose exec bash sh -c "python ./django508/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword"
+      - docker-compose down
 
   up:
     desc: Start web server
@@ -34,17 +35,27 @@ tasks:
   bash:
     desc: Open shell in app container
     cmds:
-      - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
-        silent: true
-      - docker-compose exec web bash
+      - docker-compose up bash -d
+      - docker-compose exec bash bash
 
-  tests:
+  test:
     desc: Execute tests
     env:
       PYTEST_ARGS: '{{.PYTEST_ARGS | default "."}}'
     cmds:
-      - task up
-      - docker-compose exec web sh -c "pytest $PYTEST_ARGS"
+      - docker-compose up test-app -d
+      - docker-compose exec test-app sh -c "pytest $PYTEST_ARGS"
+
+  docker-prune:
+    desc: Remove all unused containers, networks, images (both dangling and unreferenced), and volumes
+    cmds:
+      - docker system prune -a -f
+  
+  lint:
+    desc: Execute linters
+    cmds:
+      - docker-compose up bash -d
+      - docker-compose exec bash sh -c "black ."
     
 
   clean:
@@ -59,3 +70,4 @@ tasks:
       - rm -rf .pytest_cache/
       - rm -rf __pycache__/
       - rm -rf django_admin_508.egg-info/
+      - rm -rf django508/db.sqlite3
