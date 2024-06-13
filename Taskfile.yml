@@ -37,13 +37,13 @@ tasks:
     cmds:
       - docker-compose up bash -d
       - docker-compose exec bash bash
-  
+
   test-e2e-local:
     desc: Run cypress tests on the local machine with GUI
     cmds:
       - task up
       - cd cypress && npm run test:e2e
-  
+
   test-e2e:
     desc: Run cypress tests headless
     cmds:
@@ -63,13 +63,12 @@ tasks:
     desc: Remove all unused containers, networks, images (both dangling and unreferenced), and volumes
     cmds:
       - docker system prune -a -f
-  
+
   lint:
     desc: Execute linters
     cmds:
       - docker-compose up bash -d
       - docker-compose exec bash sh -c "black ."
-    
 
   clean:
     desc: Stop and destroy all container and databases

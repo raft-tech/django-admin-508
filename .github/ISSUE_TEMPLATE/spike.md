@@ -11,13 +11,13 @@ assignees: ''
 _Provide a brief background and justification for this issue_
 
 **Open Questions:**
-_Please include any questions, possible solutions or decisions that should be explored during work_ 
+_Please include any questions, possible solutions or decisions that should be explored during work_
 
 - _Open Question 1_
 - _Open Question 2_
 
 
-**Deliverable(s):** 
+**Deliverable(s):**
 _Create a list of recommendations or proofs of concept to be achieved to complete this issue_
 
 - [ ] _Outcome 1_

@@ -7,7 +7,7 @@ _List the steps to test the PR_
 These steps are generic, please adjust as necessary.
 ```
 cd tdrs-frontend && docker-compose -f docker-compose.yml -f docker-compose.local.yml up -d
-cd tdrs-backend && docker-compose -f docker-compose.yml -f docker-compose.local.yml up -d 
+cd tdrs-backend && docker-compose -f docker-compose.yml -f docker-compose.local.yml up -d
 ```
 
 1. Open http://localhost:3000/ and sign in.
@@ -41,9 +41,9 @@ Checklist of ACs:
 
 ### [Deliverable 4: Accessible](https://github.com/raft-tech/TANF-app/blob/develop/docs/How-We-Work/our-priorities-values-expectations.md#Deliverable-4-Accessibility)
 
-+ [ ] Does this PR complete the epic? 
++ [ ] Does this PR complete the epic?
 + [ ] Are links included to any other gov-approved PRs associated with epic?
-+ [ ] Does PR include documentation for Raft's a11y review? 
++ [ ] Does PR include documentation for Raft's a11y review?
 + [ ] Did automated and manual testing with `iamjolly` and `ttran-hub` using Accessibility Insights reveal any errors introduced in this PR?
 
 
@@ -63,16 +63,16 @@ Checklist of ACs:
 
 + [ ] Does the OWASP Scan pass on CircleCI?
 + [ ] Do manual code review and manual testing detect any new security issues?
-+ [ ] If new issues detected, is investigation and/or remediation plan documented? 
++ [ ] If new issues detected, is investigation and/or remediation plan documented?
 
 ### [Deliverable 8: User Research](https://github.com/raft-tech/TANF-app/blob/develop/docs/How-We-Work/our-priorities-values-expectations.md#Deliverable-8-User-Research)
 
 Research product(s) clearly articulate(s):
 + [ ] the purpose of the research
-+ [ ] methods used to conduct the research 
++ [ ] methods used to conduct the research
 + [ ] who participated in the research
 + [ ] what was tested and how
 + [ ] impact of research on TDP
-+ [ ] (_if applicable_) final design mockups produced for TDP development 
++ [ ] (_if applicable_) final design mockups produced for TDP development
 
 

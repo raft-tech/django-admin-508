@@ -13,12 +13,12 @@ executors:
     machine:
       docker_layer_caching: false
       image: ubuntu-2204:2024.01.1
-  
+
 commands:
   install_node_packages:
     description: Install node packages for Cypress test suite
     steps:
-      - run: 
+      - run:
           name: Install Cypress
           command: cd cypress && npm install && cd ..
       - run:
@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - install_node_packages
-      - run: task tests
+      - run: task test
 
 workflows:
   build_and_test:

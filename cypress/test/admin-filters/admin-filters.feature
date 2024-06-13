@@ -4,4 +4,3 @@ Feature: Admin user apply filters in DAC
         And The admin navigates to the users page
         When The admin filters for user ...
         Then Only the filtered user is displayed
-
