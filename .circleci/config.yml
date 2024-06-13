@@ -3,6 +3,11 @@ version: 2.1
 orbs:
   node: circleci/node@5.2.0
 
+parameters:
+  build_and_test:
+    type: boolean
+    default: false
+
 executors:
   machine-executor:
     machine:
@@ -30,5 +35,6 @@ jobs:
 
 workflows:
   build_and_test:
+    when: << pipeline.parameters.build_and_test >>
     jobs:
       - build_and_test
