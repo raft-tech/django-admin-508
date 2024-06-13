@@ -5,12 +5,28 @@ services:
       - DJANGO_SUPERUSER_PASSWORD=123123
       - DJANGO_SETTINGS_MODULE=django508.settings
     command: >
-      sh -c "pip install -r requirements.txt
-      && python ./django508/manage.py makemigrations
-      && python ./django508/manage.py migrate
-      && python ./django508/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword
-      && python ./django508/manage.py runserver 0.0.0.0:8000"
+      sh -c "python ./django508/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+
+  bash:
+    build: .
+    environment:
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SETTINGS_MODULE=django508.settings
+    command: >
+      sh -c "tail -f /dev/null"
+    volumes:
+      - .:/code
+
+  test-app:
+    build: .
+    environment:
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SETTINGS_MODULE=django508.settings
+    volumes:
+      - .:/code
+    command: >
+      sh -c "tail -f /dev/null"

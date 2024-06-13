@@ -27,3 +27,4 @@ sqlparse==0.4.2
 toml==0.10.2
 urllib3==1.26.8
 virtualenv==20.13.1
+black==22.3.0
