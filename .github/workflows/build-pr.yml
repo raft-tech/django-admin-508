@@ -41,4 +41,4 @@ jobs:
           user-token: ${{ secrets.CIRCLE_CI_V2_TOKEN }}
           project-slug: ${{ github.repository }}
           branch: ${{ (github.event_name == 'pull_request') && github.head_ref || github.ref_name }}
-          payload: '{"build_and_test": true, "triggered": true}'
+          payload: '{"build_and_test": true}'
