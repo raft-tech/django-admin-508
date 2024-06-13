@@ -56,7 +56,7 @@ tasks:
     env:
       PYTEST_ARGS: '{{.PYTEST_ARGS | default "."}}'
     cmds:
-      - docker-compose up test-app -d
+      - task up
       - docker-compose exec test-app sh -c "pytest $PYTEST_ARGS"
       - task test-e2e
 
