@@ -1,31 +1,18 @@
 ###########################################################################
 # GitHub Action Workflow
-# On changes to scripts or changes to the pipeline code to any branch
-# besides develop, staging and master triggers the full build and test
-# pipeline.
 #
-# NOTE: develop, staging(main) and master are skipped on the push because this
-#       would be redundant after running the full set of tests from the PR.
-#       See build-pr.yml for builds that run on code being merged into develop.
-#       See deploy-develop-on-merge.yml and make_erd for the workflow
-#       pipelines that run on merge to develop, staging, and master branches.
-#       HHS (main and master and release/**) branches build all only
-#       and are managed in CircleCI
-#
-# Step 0: Make changes on your branch to files in scripts/ .circleci or .github
+# Step 0: Make changes on your branch to files in admin_interface/, cypress/, django508/, .circleci or .github
 #         and push changes to your remote branch.
 #
 # Step 1: Makes a request to the V2 CircleCI API to initiate the project,
-#         which will filter based upon build_and_test_backend and
-#         build_and_test_frontend to run the workflow/jobs listed here:
-#           build-and-test:[
-#             test-backend,
-#             test-frontend,
-#             test-e2e
+#         which will filter based upon build_and_test to run the workflow/jobs
+#          listed here:
+#           build_and_test:[
+#             build_and_test,
 #           ]
 #
 #         Leverages the open source GitHub Action:
-#           https://github.com/promiseofcake/circleci-trigger-action
+#         https://github.com/promiseofcake/circleci-trigger-action
 ###########################################################################
 name: Build and test All on push when scripts/commands change
 on:

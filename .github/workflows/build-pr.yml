@@ -6,19 +6,17 @@
 # NOTE: release branches, staging(main) and master are skipped because
 #       these branch builds are managed in CircleCI
 #
-# Step 0: make PR from your branch into develop, then select reviewers.
+# Step 0: make PR from your branch into main, then select reviewers.
 #
 # Step 1: Makes a request to the V2 CircleCI API to initiate the project,
-#         which will filter based upon build_and_test_backend and
-#         build_and_test_frontend to run the workflow/jobs listed here:
-#           build-and-test:[
-#             test-backend,
-#             test-frontend,
-#             test-e2e
+#         which will filter based upon build_and_test to run the workflow/jobs
+#         listed here:
+#           build_and_test:[
+#             build_and_test
 #           ]
 #
 #         Leverages the open source GitHub Action:
-#           https://github.com/promiseofcake/circleci-trigger-action
+#         https://github.com/promiseofcake/circleci-trigger-action
 ###########################################################################
 name: Build and test All for PRs
 on:
