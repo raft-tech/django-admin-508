@@ -1,7 +1,7 @@
 """Filter classes."""
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import SimpleListFilter
-from .models import DummyModel
+from ..models import DummyModel
 
 
 class MultipleChoiceListFilter(SimpleListFilter):
@@ -69,12 +69,11 @@ class DummyModelNameFilter(MultipleChoiceListFilter):
 
     def lookups(self, request, model_admin):
         """Available options in dropdown."""
-        listing_record_type = [i for i in str(request.path).lower().split('/') if i not in ['/', '']][-1]
-        options = set()
+        options = list()
         objs = DummyModel.objects.all()
         for obj in objs:
             name = obj.name
-            options.add((name, name))
+            options.append((name, name))
 
         return options
 

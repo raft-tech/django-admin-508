@@ -1,7 +1,6 @@
-import os
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
-from django508.models import DummyModel, DummyModel2
+from tests.models import DummyModel, DummyModel2
 
 
 class Command(BaseCommand):
