@@ -10,6 +10,7 @@ tasks:
       - docker-compose exec bash sh -c "python ./django508/manage.py makemigrations"
       - docker-compose exec bash sh -c "python ./django508/manage.py migrate"
       - docker-compose exec bash sh -c "python ./django508/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword"
+      - docker-compose exec bash sh -c "python ./django508/manage.py create_dummy_models"
       - docker-compose down
 
   up:

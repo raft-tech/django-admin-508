@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .filters import UserFilter
+from .filters import DummyModelNameFilter
 from .models import DummyModel, DummyModel2
-from .filters import MultipleChoiceListFilter
 
 
 class ReadOnlyDummyMixin(admin.ModelAdmin):
@@ -38,7 +37,7 @@ class Dummy_Admin(ReadOnlyDummyMixin):
     ]
 
     list_filter = [
-        MultipleChoiceListFilter,
+        DummyModelNameFilter,
     ]
 
 

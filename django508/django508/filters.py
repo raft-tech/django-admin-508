@@ -1,6 +1,7 @@
 """Filter classes."""
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.admin import SimpleListFilter
+from .models import DummyModel
 
 
 class MultipleChoiceListFilter(SimpleListFilter):
@@ -59,23 +60,27 @@ class MultipleChoiceListFilter(SimpleListFilter):
             }
 
 
-class UserFilter(MultipleChoiceListFilter):
+class DummyModelNameFilter(MultipleChoiceListFilter):
     """Simple filter class to show records based on stt."""
 
-    title = _("User Code")
+    title = _("Name")
 
-    parameter_name = "username"
+    parameter_name = "name"
 
     def lookups(self, request, model_admin):
         """Available options in dropdown."""
-        options = []
-        for obj in User.objects.all():
-            options.append((obj.stt_code, _(obj.name)))
+        listing_record_type = [i for i in str(request.path).lower().split('/') if i not in ['/', '']][-1]
+        options = set()
+        objs = DummyModel.objects.all()
+        for obj in objs:
+            name = obj.name
+            options.add((name, name))
+
         return options
 
     def queryset(self, request, queryset):
         """Return queryset of records based on stt code(s)."""
         if self.value() is not None and queryset.exists():
-            stts = self.value().split(",")
-            queryset = queryset.filter(datafile__stt__stt_code__in=stts)
+            names = self.value().split(",")
+            queryset = queryset.filter(name__in=names)
         return queryset

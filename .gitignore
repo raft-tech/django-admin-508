@@ -69,3 +69,4 @@ cypress/cypress
 
 # VSCode
 .vscode
+.DS_Store
