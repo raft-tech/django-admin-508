@@ -34,7 +34,7 @@ jobs:
     name: Build and Test PR in CirCI
     steps:
       - uses: actions/checkout@v2
-      - name: Circle CI Deployment Trigger
+      - name: Build and Test PR in CirCI
         id: curl-circle-ci
         uses: promiseofcake/circleci-trigger-action@v1
         with:
