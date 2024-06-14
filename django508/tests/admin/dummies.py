@@ -1,7 +1,6 @@
 from django.contrib import admin
-from . import filters
-from .models import DummyModel, DummyModel2
-from .filters import MultipleChoiceListFilter
+from .filters import DummyModelNameFilter
+from ..models import DummyModel, DummyModel2
 
 
 class ReadOnlyDummyMixin(admin.ModelAdmin):
@@ -38,8 +37,21 @@ class Dummy_Admin(ReadOnlyDummyMixin):
     ]
 
     list_filter = [
-        MultipleChoiceListFilter,
+        DummyModelNameFilter,
     ]
 
+class Dummy2_Admin(ReadOnlyDummyMixin):
+    """ModelAdmin class for parsed M1 data files."""
 
-admin.site.register(DummyModel, Dummy_Admin)
+    list_display = [
+        "name",
+        "description",
+        "created",
+        "updated",
+        "user",
+    ]
+
+    list_filter = [
+        DummyModelNameFilter,
+    ]
+

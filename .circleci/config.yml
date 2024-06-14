@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.2.0
+
+parameters:
+  build_and_test:
+    type: boolean
+    default: false
+
+executors:
+  machine-executor:
+    machine:
+      docker_layer_caching: false
+      image: ubuntu-2204:2024.01.1
+
+commands:
+  install_node_packages:
+    description: Install node packages for Cypress test suite
+    steps:
+      - run:
+          name: Install Cypress
+          command: cd cypress && npm install && cd ..
+      - run:
+          name: Install Task
+          command: cd cypress && npm install -g @go-task/cli && cd ..
+
+jobs:
+  build_and_test:
+    executor: machine-executor
+    steps:
+      - checkout
+      - install_node_packages
+      - run: task init
+      - run: task test
+
+workflows:
+  build_and_test:
+    when: << pipeline.parameters.build_and_test >>
+    jobs:
+      - build_and_test

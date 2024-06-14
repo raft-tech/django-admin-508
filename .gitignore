@@ -62,3 +62,11 @@ TODO.txt
 
 # venv
 *.sqlite3
+
+# Cypress
+node_modules/
+cypress/cypress
+
+# VSCode
+.vscode
+.DS_Store
