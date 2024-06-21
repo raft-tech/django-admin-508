@@ -56,32 +56,14 @@ python3 -m twine upload --repository testpypi dist/*
 ```
 
 
-```
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-python makemigrations.py
-```
-
-### In da508
-- clear the dist dir
-- increment version
-- build
-- twine upload
-
-### In TDRS
-- backend: `dc up`
-- ` docker compose run web python -m pipenv install django-admin-508==0.0.8`
-
-
 ## local development
-- create empty django project
-- create venv
-- `build` package in another directory
-- pip install -e /path/to/508
-- migrate
+In local development, the package has a parallel django508 application that can be started using Task file. The application has the admin_interface as one of the listed apps, so when started, the admin_interface project is automatically added.
 
- 
+
+To list the available commands, run ```task help```. A django server can be started using ```task up``` command. 
+
+### Running pytest
+Pytest test files can be ran using: ```task pytest```. If you need to add pytest command line option, you may do so using ```PYTEST_ARGS``` variable. E.g: ```task pytest  PYTEST_ARGS="./tests/test_models.py -s -vv"```
 
 ## License
 Released under [MIT License](LICENSE.txt).

@@ -1,3 +1,12 @@
+## v1.0.0 (2024-06-21)
+
+* fix: corrected dockerized application for testing
+* fix: fixed test files
+* addition: added task file for development commands
+* addition: added cypress test
+* chore: cleaned unused files
+* chore: bump version
+
 ## v0.2.2 (2024-05-07)
 
 * fix: filter-list was concatenated incorrectly. Changed ? with & on tailing filters 

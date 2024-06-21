@@ -84,3 +84,8 @@ tasks:
       - rm -rf __pycache__/
       - rm -rf django_admin_508.egg-info/
       - rm -rf django508/db.sqlite3
+
+  help:
+    desc: Show help
+    cmds:
+      - task --list
