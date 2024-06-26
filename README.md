@@ -63,7 +63,7 @@ In local development, the package has a parallel django508 application that can 
 To list the available commands, run ```task help```. A django server can be started using ```task up``` command. 
 
 ### Running pytest
-Pytest test files can be ran using: ```task pytest```. If you need to add pytest command line option, you may do so using ```PYTEST_ARGS``` variable. E.g: ```task pytest  PYTEST_ARGS="./tests/test_models.py -s -vv"```
+Pytest test files can be ran using: ```task test```. If you need to add pytest command line option, you may do so using ```PYTEST_ARGS``` variable. E.g: ```task test  PYTEST_ARGS="./tests/test_models.py -s -vv"```
 
 ## License
 Released under [MIT License](LICENSE.txt).

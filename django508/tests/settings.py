@@ -73,14 +73,6 @@ database_config = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": ":memory:",
     },
-    # 'mysql': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'admin_interface',
-    #     'USER': 'mysql',
-    #     'PASSWORD': 'mysql',
-    #     'HOST': '',
-    #     'PORT': '',
-    # },
 }
 
 DATABASES = {
