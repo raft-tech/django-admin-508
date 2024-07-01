@@ -1,17 +1,32 @@
-version: "3.9"
-
 services:
   web:
     build: .
     environment:
-      - DJANGO_SUPERUSER_PASSWORD=djangopassword
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SETTINGS_MODULE=django508.settings
     command: >
-      sh -c "pip install -r requirements.txt
-      && python mysite/manage.py makemigrations
-      && python mysite/manage.py migrate
-      && python mysite/manage.py createsuperuser --noinput --username django --email django@python.org
-      || python mysite/manage.py runserver 0.0.0.0:8000"
+      sh -c "python ./django508/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+
+  bash:
+    build: .
+    environment:
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SETTINGS_MODULE=django508.settings
+    command: >
+      sh -c "tail -f /dev/null"
+    volumes:
+      - .:/code
+
+  test-app:
+    build: .
+    environment:
+      - DJANGO_SUPERUSER_PASSWORD=123123
+      - DJANGO_SETTINGS_MODULE=django508.settings
+    volumes:
+      - .:/code
+    command: >
+      sh -c "tail -f /dev/null"

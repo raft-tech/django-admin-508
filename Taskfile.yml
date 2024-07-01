@@ -1,0 +1,91 @@
+version: '3'
+
+tasks:
+
+  init:
+    desc: Initialize the project
+    cmds:
+      - docker-compose up -d --build
+      - docker-compose exec bash sh -c "pip install -r requirements.txt"
+      - docker-compose exec bash sh -c "python ./django508/manage.py makemigrations"
+      - docker-compose exec bash sh -c "python ./django508/manage.py migrate"
+      - docker-compose exec bash sh -c "python ./django508/manage.py upsert_admin_user --username admin --email admin@fakeemail.com --password fakepassword"
+      - docker-compose exec bash sh -c "python ./django508/manage.py create_dummy_models"
+      - docker-compose down
+
+  up:
+    desc: Start web server
+    cmds:
+      - docker-compose up -d
+
+  build:
+    desc: Build web server
+    cmds:
+      - docker-compose build
+
+  down:
+    desc: Stop web server
+    cmds:
+      - docker-compose down
+
+  logs:
+    desc: Show logs
+    cmds:
+      - docker-compose logs -f
+
+  bash:
+    desc: Open shell in app container
+    cmds:
+      - docker-compose up bash -d
+      - docker-compose exec bash bash
+
+  test-e2e-local:
+    desc: Run cypress tests on the local machine with GUI
+    cmds:
+      - task up
+      - cd cypress && npm run test:e2e
+
+  test-e2e:
+    desc: Run cypress tests headless
+    cmds:
+      - task up
+      - cd cypress && npm run test:e2e-ci
+
+  test:
+    desc: Execute tests
+    env:
+      PYTEST_ARGS: '{{.PYTEST_ARGS | default "."}}'
+    cmds:
+      - docker-compose up test-app -d
+      - docker-compose exec test-app sh -c "pytest $PYTEST_ARGS"
+      - task test-e2e
+
+  docker-prune:
+    desc: Remove all unused containers, networks, images (both dangling and unreferenced), and volumes
+    cmds:
+      - docker system prune -a -f
+
+  lint:
+    desc: Execute linters
+    cmds:
+      - docker-compose up bash -d
+      - docker-compose exec bash sh -c "black ."
+
+  clean:
+    desc: Stop and destroy all container and databases
+    cmds:
+      - cmd: if [ -f /.dockerenv ]; then echo "Don't execute it in docker app container"; false; fi
+        silent: true
+      - task: down
+      - docker-compose rm -f
+      - rm -rf build/
+      - rm -rf .tox/
+      - rm -rf .pytest_cache/
+      - rm -rf __pycache__/
+      - rm -rf django_admin_508.egg-info/
+      - rm -rf django508/db.sqlite3
+
+  help:
+    desc: Show help
+    cmds:
+      - task --list
