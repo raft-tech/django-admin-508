@@ -7,6 +7,10 @@
 * chore: cleaned unused files
 * chore: bump version
 
+## v1.0.1
+
+* feat: Add support to call custom callback functions from filters outside of 508's scope to support unified filter button clicking
+
 ## v0.2.2 (2024-05-07)
 
 * fix: filter-list was concatenated incorrectly. Changed ? with & on tailing filters 
